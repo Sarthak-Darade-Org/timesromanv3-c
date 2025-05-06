@@ -229,7 +229,7 @@ const Article = () => {
     <div className="flex min-h-screen flex-col">
       <SEOHead 
         title={`${article.title} | Times Roman`}
-        description={articleDescription}
+        description={article.excerpt}
         ogImage={article.imageUrl}
         ogType="article"
         canonical={currentUrl}
