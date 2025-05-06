@@ -95,6 +95,16 @@ const SEOHead: React.FC<SEOHeadProps> = ({
         </>
       )}
     </Helmet>
+    <Helmet>
+  {/* WhatsApp Specific Tags */}
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content={article.title} />
+  
+  {/* WhatsApp caches aggressively - add timestamp */}
+  <meta property="og:updated_time" content={new Date().toISOString()} />
+</Helmet>
   );
 };
 
