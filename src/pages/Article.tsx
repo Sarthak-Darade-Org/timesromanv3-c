@@ -234,7 +234,6 @@ const Article = () => {
          ogTitle={`${article.title} | Times Roman`}
          ogDescription={article.excerpt || articleDescription}
          ogImage={article.imageUrl}
-         ogType="article"
          ogUrl={currentUrl}
          twitterCard="summary_large_image"
          twitterSite="@timesroman"
