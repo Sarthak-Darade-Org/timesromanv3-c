@@ -230,10 +230,15 @@ const Article = () => {
       <SEOHead 
         title={`${article.title} | Times Roman`}
         description={article.excerpt}
-        ogImage={article.imageUrl}
-        ogType="article"
-        canonical={currentUrl}
-        articleMeta={{
+         ogTitle={`${article.title} | Times Roman`}
+         ogDescription={articleDescription}
+         ogImage={article.imageUrl} // Use article image instead of logo
+         ogType="article"
+         canonical={currentUrl}
+         twitterCard="summary_large_image"
+         twitterSite="@timesroman"
+         twitterImage={article.imageUrl} // Explicitly set Twitter image
+         articleMeta={{
           publishedTime: isoDate,
           author: article.author,
           category: article.category
