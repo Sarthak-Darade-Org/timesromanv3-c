@@ -227,20 +227,27 @@ const Article = () => {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <SEOHead 
-       title={`${article.title} | Times Roman`}
-       description={articleDescription}
-       ogTitle={`${article.title} | Times Roman`}
-       ogDescription={articleDescription}
-       ogImage={article.imageUrl}
-       ogType="article"
-       canonical={currentUrl}
-       twitterImage={article.imageUrl}
-       articleMeta={{
-        publishedTime: isoDate,
-        author: article.author,
-        category: article.category
-    }}
+     <SEOHead 
+         title={`${article.title} | Times Roman`}
+         description={article.excerpt || articleDescription}
+         author={article.author || "Times Roman"}
+         ogTitle={`${article.title} | Times Roman`}
+         ogDescription={article.excerpt || articleDescription}
+         ogImage={article.imageUrl}
+         ogType="article"
+         ogUrl={currentUrl}
+         twitterCard="summary_large_image"
+         twitterSite="@timesroman"
+         twitterTitle={`${article.title} | Times Roman`}
+         twitterDescription={article.excerpt || articleDescription}
+         twitterImage={article.imageUrl}
+        canonical={currentUrl}
+           articleMeta={{
+              publishedTime: isoDate,
+              author: article.author,
+              section: article.category,
+              tags: article.tags || []
+     }}
   />
       <ReadingProgressBar />
       <Navbar />
