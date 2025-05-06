@@ -228,22 +228,20 @@ const Article = () => {
   return (
     <div className="flex min-h-screen flex-col">
       <SEOHead 
-        title={`${article.title} | Times Roman`}
-        description={article.excerpt}
-         ogTitle={`${article.title} | Times Roman`}
-         ogDescription={articleDescription}
-         ogImage={article.imageUrl} // Use article image instead of logo
-         ogType="article"
-         canonical={currentUrl}
-         twitterCard="summary_large_image"
-         twitterSite="@timesroman"
-         twitterImage={article.imageUrl} // Explicitly set Twitter image
-         articleMeta={{
-          publishedTime: isoDate,
-          author: article.author,
-          category: article.category
-        }}
-      />
+       title={`${article.title} | Times Roman`}
+       description={articleDescription}
+       ogTitle={`${article.title} | Times Roman`}
+       ogDescription={articleDescription}
+       ogImage={article.imageUrl}
+       ogType="article"
+       canonical={currentUrl}
+       twitterImage={article.imageUrl}
+       articleMeta={{
+        publishedTime: isoDate,
+        author: article.author,
+        category: article.category
+    }}
+  />
       <ReadingProgressBar />
       <Navbar />
       
